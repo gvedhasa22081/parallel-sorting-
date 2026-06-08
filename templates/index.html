@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Parallel Merge Sort Benchmark</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Parallel Merge Sort Benchmark</h1>
+
+    <div class="card">
+
+        <input type="number"
+               id="size"
+               value="100000"
+               placeholder="Array Size">
+
+        <button onclick="runBenchmark()">
+            Run Benchmark
+        </button>
+
+    </div>
+
+    <div class="results">
+
+        <div class="result-card">
+            <h2 id="normal">0</h2>
+            <p>Normal Merge Sort</p>
+        </div>
+
+        <div class="result-card">
+            <h2 id="parallel">0</h2>
+            <p>Parallel Merge Sort</p>
+        </div>
+
+        <div class="result-card">
+            <h2 id="speedup">0x</h2>
+            <p>Speedup</p>
+        </div>
+
+    </div>
+
+    <canvas id="chart"></canvas>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
