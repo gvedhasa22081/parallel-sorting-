@@ -12,8 +12,22 @@ def merge(left, right):
 
     result.extend(left[i:])
     result.extend(right[j:])
-
     return result
 
 
-print("Project Started")
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge(left, right)
+
+
+arr = [8, 3, 6, 1, 5]
+
+print("Original Array:", arr)
+print("Sorted Array:", merge_sort(arr))
